@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+    // I used Two functions here.  Starter idea at:
+    // https://codepen.io/ColleenEMc/pen/XmZzWw
+
+    function newImage(thisImage){
+      // console.log(thisImage);
+      // understand "this" better
+      document.querySelector("#image").innerHTML = thisImage.alt;
+      document.querySelector("#image").style.background = "url("+thisImage.src+")"; // look into this later
+      document.querySelector("#image").style.backgroundSize = "auto 325px";
+      document.querySelector("#image").style.backgroundPosition = "center";
+    }
+
+    function undo(){
+      document.querySelector("#image").innerHTML = "Hover or tab over/into an image below.";
+      document.querySelector("#image").style.background = "";
+    }
+
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 5</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1" alt = "swedish plant" src = "1.jpg" onmouseover = "newImage(this)" onmouseleave = "undo()" onfocus = "newImage(this)" onblur = "undo()";>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1" alt = "river" src = "5.jpg" onmouseover = "newImage(this)" onmouseleave = "undo()" onfocus = "newImage(this)" onblur = "undo()";>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1" alt = "entrance" src = "3.jpg" onmouseover = "newImage(this)" onmouseleave = "undo(x)" onfocus = "newImage(this)" onblur = "undo()";>
+
+        <img class = "preview" tabindex = "1" alt = "squirrel" src = "4.jpg" onmouseover = "newImage(this)" onmouseleave = "undo(x)" onfocus = "newImage(this)" onblur = "undo()";>
+
+        <img class = "preview" tabindex = "1" alt = "beans" src = "2.jpg" onmouseover = "newImage(this)" onmouseleave = "undo(x)" onfocus = "newImage(this)" onblur = "undo()";>
+
+        <img class = "preview" tabindex = "1" alt = "arch" src = "6.jpg" onmouseover = "newImage(this)" onmouseleave = "undo(x)" onfocus = "newImage(this)" onblur = "undo()";>
+</body>
+</html>
